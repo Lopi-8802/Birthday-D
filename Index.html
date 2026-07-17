@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 💜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<!-- OPTIONAL: Uncomment this if you want to play a background bts-musicbox.mp3 file -->
+ <audio id="bg-music" src="bts-musicbox.mp3" loop></audio>
+
+<div class="phone-container" id="phone-app">
+
+    <div class="bg-hearts" id="bg-hearts"></div>
+
+    <!-- 1. SCREEN: LOCK SCREEN (Passcode: 1013 - Jimin's Birthday) -->
+    <div id="screen-lock" class="screen active">
+        <div class="avatar-container">
+            <!-- BT21 Chimmy GIF -->
+            <img src="https://media.tenor.com/tHqXl03n56cAAAAi/bt21-chimmy.gif" alt="Chimmy Dancing">
+        </div>
+        <h3 style="margin-bottom: 15px;">Enter the passcode</h3>
+        
+        <div class="passcode-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="keypad">
+            <div class="key" onclick="pressKey('1')">1</div>
+            <div class="key" onclick="pressKey('2')">2</div>
+            <div class="key" onclick="pressKey('3')">3</div>
+            <div class="key" onclick="pressKey('4')">4</div>
+            <div class="key" onclick="pressKey('5')">5</div>
+            <div class="key" onclick="pressKey('6')">6</div>
+            <div class="key" onclick="pressKey('7')">7</div>
+            <div class="key" onclick="pressKey('8')">8</div>
+            <div class="key" onclick="pressKey('9')">9</div>
+            <div class="key" onclick="pressKey('*')">*</div>
+            <div class="key" onclick="pressKey('0')">0</div>
+            <div class="key" onclick="pressKey('#')">#</div>
+        </div>
+    </div>
+
+    <!-- 2. SCREEN: WRONG PASSCODE ERROR -->
+    <div id="screen-wrong-passcode" class="screen">
+        <h2 style="color: #d9534f; font-size: 28px; font-weight: 800;">WRONG PASSCODE!</h2>
+        <img class="gif-img" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmtpajNld3pvdjRxamlyNjVrbnBrOGo4MnhubWNodmlidDF2MWN1YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Yq1t3YLv9YI7fALo5m/giphy.gif" alt="Sad cat">
+        <button class="btn" onclick="nextScreen('screen-wrong-passcode', 'screen-lock')">TRY AGAIN</button>
+    </div>
+
+    <!-- 3. SCREEN: COUNTDOWN (Rains high visibility purple hearts) -->
+    <div id="screen-countdown" class="screen" style="background-color: #000;">
+        <div class="countdown-number" id="countdown-num">3</div>
+    </div>
+
+    <!-- 4. SCREEN: HAPPY BIRTHDAY WELCOME -->
+    <div id="screen-welcome" class="screen">
+        <h1 class="birthday-title">Happy Birthday, Deepika! 🌸</h1>
+        <p style="font-size: 14px; margin-bottom: 20px; color: #888;">Are you ready for your birthday surprise?</p>
+        <!-- Cute Jimin waving GIF -->
+        <img class="gif-img" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHI1OWFkMXVtdmF4bDRmcDZzOG9idTExOWtlczYyZHlzOGg1Yno5MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v9WbE56SgFA7m/giphy.gif" alt="Jimin Waving">
+        <button class="btn" onclick="nextScreen('screen-welcome', 'screen-balloons')">I am excited! ✨</button>
+    </div>
+
+    <!-- 5. SCREEN: POP BALLOONS -->
+    <div id="screen-balloons" class="screen">
+        <h2>Pop all 4 balloons! 🎈</h2>
+        <div class="balloon-container">
+            <div class="balloon b1" onclick="popBalloon(this, 0)"><div class="balloon-string"></div></div>
+            <div class="balloon b2" onclick="popBalloon(this, 1)"><div class="balloon-string"></div></div>
+            <div class="balloon b3" onclick="popBalloon(this, 2)"><div class="balloon-string"></div></div>
+            <div class="balloon b4" onclick="popBalloon(this, 3)"><div class="balloon-string"></div></div>
+        </div>
+        <div class="pop-message" id="pop-text">...</div>
+        <button class="btn" id="balloon-next-btn" style="display: none;" onclick="nextScreen('screen-balloons', 'screen-candle')">Next step ➔</button>
+    </div>
+
+    <!-- 6. SCREEN: BLOW CANDLE -->
+    <div id="screen-candle" class="screen">
+        <h2 id="candle-instruction">Blow the candle, Deepika! 🎂</h2>
+        <p style="font-size: 13px; color: #888; margin-top: 5px;">(Tap the flame to blow it out and make a wish)</p>
+        <div class="cake-container" onclick="blowCandle()">
+            <div class="flame" id="cake-flame"></div>
+            <img class="cake-img" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=300" alt="Cake">
+        </div>
+        <button class="btn" id="candle-next-btn" style="display: none;" onclick="nextScreen('screen-candle', 'screen-bouquet')">View Bouquet 💐</button>
+    </div>
+
+    <!-- 7. SCREEN: ROSE BOUQUET (Jimin Lyrics) -->
+    <div id="screen-bouquet" class="screen">
+        <h2>Your Rose Bouquet 🌹</h2>
+        <div class="bouquet-container">
+            <div class="love-tag tag1">I Purple You 💜</div>
+            <div class="love-tag tag2">You Make My World Beautiful ✨</div>
+            <div class="love-tag tag3">My Favorite Person 🐥</div>
+            <div class="love-tag tag4">My Serendipity 🌌</div>
+            <img class="bouquet-img" src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&q=80&w=400" alt="Roses">
+        </div>
+        <button class="btn" onclick="nextScreen('screen-bouquet', 'screen-letter')">Open Heartfelt Message 💌</button>
+    </div>
+
+    <!-- 8. SCREEN: MESSAGE LETTER -->
+    <div id="screen-letter" class="screen">
+        <h2>A Message From My Heart</h2>
+        <p style="font-size: 12px; color: #888;">(Tap the envelope to open)</p>
+        <div class="envelope-wrapper" id="envelope" onclick="openEnvelope()">
+            <div class="envelope-flap"></div>
+            <div class="letter">
+                <h4>Dear Deepika,</h4>
+                <p>Happy Birthday to someone incredibly special! 🎂🎈</p>
+                <br>
+                <p>You are sweet, loving, and my true rock. I am so lucky and grateful to have you in my life. Every single moment spent with you is pure magic.</p>
+                <br>
+                <p>On your special day, I wish you all the joy, love, and infinite happiness that you deserve. Here is to celebrating you today and forever!</p>
+                <br>
+                <p>With all my love,<br>Your Special Someone ❤️</p>
+            </div>
+        </div>
+        <button class="btn" id="letter-next-btn" style="display: none; margin-top: 150px;" onclick="nextScreen('screen-letter', 'screen-virtual-hug')">Next ❤️</button>
+    </div>
+
+    <!-- 9. SCREEN: VIRTUAL HUG -->
+    <div id="screen-virtual-hug" class="screen">
+        <h2>Virtual hug for ya! 🥰</h2>
+        <!-- Chimmy hugging flying heart GIF -->
+        <img class="gif-img" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDVyOGI5bnJxbHRrYzNpNm82OTF5cG1icWF3bXgwdHpscmwwa3Q3NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9d3LQ6TdV2Flo8ODTU/giphy.gif alt="Chimmy Heart Hug" style="width: 220px; height: 220px;">
+        <h2 style="color: var(--dark-pink); margin-top: 10px;">I MISS YOU</h2>
+        <button class="btn" onclick="nextScreen('screen-virtual-hug', 'screen-gift')">Click for one final surprise... 🎁</button>
+    </div>
+
+    <!-- 10. SCREEN: FINAL SURPRISE GIFT -->
+    <div id="screen-gift" class="screen">
+        <h2 id="gift-heading">Tap the gift! 🎁</h2>
+        <div class="gift-box" id="gift-box-element" onclick="openGift()">🎁</div>
+        <img class="surprise-img" id="gift-surprise-img" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=400" alt="Surprise Photo">
+        <p id="gift-subtext" style="font-size: 14px; font-weight: bold; display: none; color: var(--dark-pink);">Lots of love for you! Happy Birthday! ❤️</p>
+        <button class="btn" id="restart-btn" style="display: none;" onclick="restartApp()">Replay surprise ❤️</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
