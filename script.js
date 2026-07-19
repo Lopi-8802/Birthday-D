@@ -95,6 +95,15 @@ function stopClearHeartsRain() {
 function nextScreen(currentId, nextId) {
     document.getElementById(currentId).classList.remove('active');
     document.getElementById(nextId).classList.add('active');
+      // ADD THIS NEW CHECK AT THE BOTTOM OF THE FUNCTION:
+    if (nextScreenId === 'screen-gift') { // Replace 'screen-gift' with the actual ID of your last screen
+        const finalImg = document.getElementById('final-surprise-img');
+        if (finalImg && finalImg.getAttribute('data-src')) {
+            // Push the real URL into the src attribute right as the screen loads
+            finalImg.src = finalImg.getAttribute('data-src');
+            finalImg.style.display = 'block'; 
+        }
+    }
 }
 
 // --- GAME 1: BALLOON POPPING (FIXED ORDER) ---
