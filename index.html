@@ -516,7 +516,7 @@
     <!-- 1. SCREEN: LOCK SCREEN (Passcode: 1013 - Jimin's Birthday) -->
     <div id="screen-lock" class="screen active">
         <div class="avatar-container">
-            <img src="https://media.tenor.com/tHqXl03n56cAAAAi/bt21-chimmy.gif" alt="Chimmy" onerror="handleImageError(this, '🐥')">
+            <img src="jimin.gif" alt="Chimmy" onerror="handleImageError(this, '🐥')">
         </div>
         <h3 style="margin-bottom: 15px;">Enter the passcode</h3>
         
@@ -546,7 +546,7 @@
     <!-- 2. SCREEN: WRONG PASSCODE ERROR -->
     <div id="screen-wrong-passcode" class="screen">
         <h2 style="color: #d9534f; font-size: 28px; font-weight: 800;">WRONG PASSCODE!</h2>
-        <img class="fallback-box" src="https://media.tenor.com/2Z5JocXn5cAAAAAi/cat-sad.gif" alt="Sad" onerror="handleImageError(this, '❌')">
+        <img class="fallback-box" src="goma.gif" alt="Sad" onerror="handleImageError(this, '❌')">
         <button class="btn" onclick="nextScreen('screen-wrong-passcode', 'screen-lock')">TRY AGAIN</button>
     </div>
 
@@ -557,9 +557,9 @@
 
     <!-- 4. SCREEN: HAPPY BIRTHDAY WELCOME -->
     <div id="screen-welcome" class="screen">
-        <h1 class="birthday-title">Happy Birthday, Divya! 🌸</h1>
+        <h1 class="birthday-title">Happy Birthday, Deepika! 🌸</h1>
         <p style="font-size: 14px; margin-bottom: 20px; color: #888;">Are you ready for your birthday surprise?</p>
-        <img class="fallback-box" src="https://media.tenor.com/7gKkCjU_JCcAAAAi/jimin-bts.gif" alt="Jimin" onerror="handleImageError(this, '👋✨')">
+        <img class="fallback-box" src="HBD.jpeg" alt="Jimin" onerror="handleImageError(this, '👋✨')">
         <button class="btn" onclick="nextScreen('screen-welcome', 'screen-balloons')">I am excited! ✨</button>
     </div>
 
@@ -578,7 +578,7 @@
 
     <!-- 6. SCREEN: BLOW CANDLE -->
     <div id="screen-candle" class="screen">
-        <h2 id="candle-instruction">Blow the candle, Divya! 🎂</h2>
+        <h2 id="candle-instruction">Blow the candle, Deepika! 🎂</h2>
         <p style="font-size: 13px; color: #888; margin-top: 5px;">(Tap the flame to blow it out and make a wish)</p>
         <div class="cake-container" onclick="blowCandle()">
             <div class="flame" id="cake-flame"></div>
@@ -607,14 +607,14 @@
         <div class="envelope-wrapper" id="envelope" onclick="openEnvelope()">
             <div class="envelope-flap"></div>
             <div class="letter">
-                <h4>Dear Divya,</h4>
+                <h4>Dear Deepika,</h4>
                 <p>Happy Birthday to someone incredibly special! 🎂🎈</p>
                 <br>
-                <p>You are sweet, loving, and my true rock. I am so lucky and grateful to have you in my life. Every single moment spent with you is pure magic.</p>
+                <p>You are sweet, loving, and true rock. I am so lucky and grateful to have you in my life. Every single moment spent with you is pure magic.</p>
                 <br>
                 <p>On your special day, I wish you all the joy, love, and infinite happiness that you deserve. Here is to celebrating you today and forever!</p>
                 <br>
-                <p>With all my love,<br>Your Best Friend ❤️</p>
+                <p>With all my love,<br>Your Someone Special ❤️</p>
             </div>
         </div>
         <button class="btn" id="letter-next-btn" style="display: none; margin-top: 150px;" onclick="nextScreen('screen-letter', 'screen-virtual-hug')">Next ❤️</button>
@@ -623,7 +623,7 @@
     <!-- 9. SCREEN: VIRTUAL HUG -->
     <div id="screen-virtual-hug" class="screen">
         <h2>Virtual hug for ya! 🥰</h2>
-        <img class="fallback-box" src="https://media.tenor.com/0Fz0aM5Z9v0AAAAi/bt21-chimmy.gif" alt="Hug" style="width: 220px; height: 220px;" onerror="handleImageError(this, '🤗💜')">
+        <img class="fallback-box" src="Hug.gif" alt="Hug" style="width: 220px; height: 220px;" onerror="handleImageError(this, '🤗💜')">
         <h2 style="color: var(--dark-pink); margin-top: 10px;">I MISS YOU</h2>
         <button class="btn" onclick="nextScreen('screen-virtual-hug', 'screen-gift')">Click for one final surprise... 🎁</button>
     </div>
@@ -632,11 +632,11 @@
     <div id="screen-gift" class="screen">
         <h2 id="gift-heading">Tap the gift! 🎁</h2>
         <div class="gift-box" id="gift-box-element" onclick="openGift()">🎁</div>
-        <img class="surprise-img" id="gift-surprise-img" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=400" alt="Surprise" onerror="handleImageError(this, '🎉🎈✨')">
+        <img class="surprise-img" id="gift-surprise-img" src="LST.jpeg?auto=format&fit=crop&q=80&w=400" alt="Surprise" onerror="handleImageError(this, '🎉🎈✨')">
         <p id="gift-subtext" style="font-size: 14px; font-weight: bold; display: none; color: var(--dark-pink);">Lots of love for you! Happy Birthday! ❤️</p>
         <button class="btn" id="restart-btn" style="display: none;" onclick="restartApp()">Replay surprise ❤️</button>
     </div>
-
+<!--src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=400"-->
 </div>
 
 <script>
