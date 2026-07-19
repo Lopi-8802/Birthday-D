@@ -481,7 +481,7 @@ body {
     100% { transform: translateY(105vh) rotate(-45deg) scale(1.3); opacity: 0; }
 }
 
-/* --- SAFEGUARD REPLACEMENT CIRCLES --- */
+/* --- SAFEGUARD REPLACEMENT CIRCLES --- 
 .fallback-box {
     width: 150px;
     height: 150px;
@@ -495,7 +495,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* ONLY animate the circle when its specific screen is active */
+/* ONLY animate the circle when its specific screen is active 
 .screen.active .fallback-box {
     animation: bounce 2s infinite ease-in-out;
 }
@@ -503,4 +503,15 @@ body {
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
+} -->
+
+/* --- FIX: FORCE ALL IMAGES INSIDE INACTIVE SCREENS TO HIDE --- */
+.screen img {
+    display: none !important;
+}
+
+/* ONLY show the images when their specific screen is active */
+.screen.active img {
+    display: block !important;
+    margin: 0 auto 20px auto; /* keeps it centered with nice spacing */
 }
