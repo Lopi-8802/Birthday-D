@@ -92,7 +92,7 @@
         .fallback-box {
             width: 150px;
             height: 150px;
-            background: white;
+            background: #CBC3E3;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -516,7 +516,7 @@
     <!-- 1. SCREEN: LOCK SCREEN (Passcode: 1013 - Jimin's Birthday) -->
     <div id="screen-lock" class="screen active">
         <div class="avatar-container">
-            <img src="jimin.gif" alt="Chimmy" onerror="handleImageError(this, '🐥')">
+            <img src="Jimin.gif" alt="Chimmy" onerror="handleImageError(this, '🐥')">
         </div>
         <h3 style="margin-bottom: 15px;">Enter the passcode</h3>
         
@@ -559,7 +559,7 @@
     <div id="screen-welcome" class="screen">
         <h1 class="birthday-title">Happy Birthday, Deepika! 🌸</h1>
         <p style="font-size: 14px; margin-bottom: 20px; color: #888;">Are you ready for your birthday surprise?</p>
-        <img class="fallback-box" src="HBD.jpeg" alt="Jimin" onerror="handleImageError(this, '👋✨')">
+        <img class="surprise-img" src="HBD.jpeg" alt="Jimin" onerror="handleImageError(this, '👋✨')">
         <button class="btn" onclick="nextScreen('screen-welcome', 'screen-balloons')">I am excited! ✨</button>
     </div>
 
